@@ -1,5 +1,6 @@
 console.clear();
 
+var input = document.getElementById("path-input");
 var table = document.getElementById("grid");
 var paths = table.getElementsByClassName("leftmost path-cell");
 
@@ -15,5 +16,6 @@ for(var i = 0; i < paths.length; i++){
   createButton(paths[i], {text: path, listener: function(e){
     console.log(e);
     e.stopPropagation();
+    input.value = paths[i];
   }});
 }
