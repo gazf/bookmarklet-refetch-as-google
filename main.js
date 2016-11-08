@@ -23,5 +23,6 @@ for(var i = 0; i < paths.length; i++){
     if(path.substr(0, 1) === "/") path = path.substr(1);
     input.value = path;
     document.getElementById("wmxbot-submit-crawl-button").getElementsByTagName("div")[0].click();
+    document.getElementById("wmxbot-fetch-form").submit();
   }});
 }
