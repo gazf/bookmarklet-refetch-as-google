@@ -10,7 +10,8 @@ function createButton(dom, option){
   button.innerText = option.text;
   button.addEventListener("click", option.listener);
   button.setAttribute("data-path", option.path);
-  dom.appendChild(button);
+  //dom.appendChild(button);
+  dom.insertBefore(button, dom);
 }
 
 for(var i = 0; i < paths.length; i++){
