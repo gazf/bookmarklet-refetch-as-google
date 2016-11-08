@@ -1,11 +1,10 @@
-console.clear();
 
 var input = document.getElementById("path-input");
-var submit = document.getElementById("wmxbot-submit-crawl-button");
+var form = document.getElementById("wmxbot-fetch-form");
 var table = document.getElementById("grid");
 var paths = table.getElementsByClassName("leftmost path-cell");
 
-function createButton(dom, option){
+function addFetchButton(dom, option){
   var button = document.createElement("div");
   button.innerText = option.text;
   button.addEventListener("click", option.listener);
@@ -14,16 +13,19 @@ function createButton(dom, option){
   dom.insertBefore(button, dom.firstChild);
 }
 
+function fetchButtonListener(e){
+  e.stopPropagation();
+  var path = e.target.getAttribute("data-path");
+  if(path.substr(0, 1) === "/") path = path.substr(1);
+  input.value = path;
+  form.submit();
+}
+
 for(var i = 0; i < paths.length; i++){
   var path = paths[i].innerText;
-  createButton(paths[i], {text: "Fetch", path: path, listener: function(e){
-    console.log(e);
-    e.stopPropagation();
-    
-    var path = e.target.getAttribute("data-path");
-    if(path.substr(0, 1) === "/") path = path.substr(1);
-    input.value = path;
-    document.getElementById("wmxbot-submit-crawl-button").getElementsByTagName("div")[0].click();
-    document.getElementById("wmxbot-fetch-form").submit();
-  }});
+  addFetchButton(paths[i], {
+    text: "Fetch",
+    path: path,
+    listener: fetchButtonListener
+  });
 }
