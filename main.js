@@ -1,4 +1,6 @@
 var table=document.getElementById("grid");
 for(var tr in table.rows){
-  console.log(tr);
+  for(var td in tr){
+    console.log(td);
+  }
 }
