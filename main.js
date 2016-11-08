@@ -11,9 +11,7 @@ function createButton(dom, option){
   button.addEventListener("click", option.listener);
   button.setAttribute("data-path", option.path);
   //dom.appendChild(button);
-  var td = document.createElement("td");
-  td.appendChild(button);
-  dom.parentNode.insertBefore(td, dom.parentNode.firstChild);
+  dom.insertBefore(button, dom.firstChild);
 }
 
 for(var i = 0; i < paths.length; i++){
