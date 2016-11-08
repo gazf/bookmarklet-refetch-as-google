@@ -1,6 +1,7 @@
 console.clear();
 
 var input = document.getElementById("path-input");
+var submit = document.getElementById("wmxbot-submit-crawl-button");
 var table = document.getElementById("grid");
 var paths = table.getElementsByClassName("leftmost path-cell");
 
@@ -21,5 +22,6 @@ for(var i = 0; i < paths.length; i++){
     var path = e.target.getAttribute("data-path");
     if(path.substr(0, 1) === "/") path = path.substr(1);
     input.value = path;
+    submit.click();
   }});
 }
