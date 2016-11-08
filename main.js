@@ -6,17 +6,17 @@ var table = document.getElementById("grid");
 var paths = table.getElementsByClassName("leftmost path-cell");
 
 function createButton(dom, option){
-  var button = document.createElement("button");
+  var button = document.createElement("div");
   button.innerText = option.text;
   button.addEventListener("click", option.listener);
   button.setAttribute("data-path", option.path);
-  //dom.appendChild(button);
+  button.setAttribute("class", "goog-inline-block jfk-button jfk-button-primary");
   dom.insertBefore(button, dom.firstChild);
 }
 
 for(var i = 0; i < paths.length; i++){
   var path = paths[i].innerText;
-  createButton(paths[i], {text: path, path: path, listener: function(e){
+  createButton(paths[i], {text: "Fetch", path: path, listener: function(e){
     console.log(e);
     e.stopPropagation();
     
