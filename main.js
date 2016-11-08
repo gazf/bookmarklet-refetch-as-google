@@ -22,6 +22,6 @@ for(var i = 0; i < paths.length; i++){
     var path = e.target.getAttribute("data-path");
     if(path.substr(0, 1) === "/") path = path.substr(1);
     input.value = path;
-    document.getElementById("wmxbot-submit-crawl-button").click();
+    document.getElementById("wmxbot-submit-crawl-button").getElementsByTagName("div")[0].click();
   }});
 }
