@@ -1,7 +1,7 @@
 console.clear();
 
 var input = document.getElementById("path-input");
-var submit = document.getElementById("wmxbot-submit-crawl-button");
+var submit = document.getElementById("wmxbot-submit-crawl-button").getElementsByTagName("div")[0];
 var table = document.getElementById("grid");
 var paths = table.getElementsByClassName("leftmost path-cell");
 
