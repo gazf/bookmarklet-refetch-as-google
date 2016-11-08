@@ -13,7 +13,7 @@ function createButton(dom, option){
   //dom.appendChild(button);
   var td = document.createElement("td");
   td.appendChild(button);
-  dom.perentNode.insertBefore(td, dom.perentNode.firstChild);
+  dom.parentNode.insertBefore(td, dom.parentNode.firstChild);
 }
 
 for(var i = 0; i < paths.length; i++){
