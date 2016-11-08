@@ -14,5 +14,6 @@ for(var i = 0; i < paths.length; i++){
   var path = paths[i].innerText;
   createButton(paths[i], {text: path, listener: function(e){
     console.log(e);
+    e.stopPropagation();
   }});
 }
