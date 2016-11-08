@@ -12,7 +12,7 @@ function createButton(dom, option){
   button.setAttribute("data-path", option.path);
   //dom.appendChild(button);
   var td = document.createElement("td");
-  td.appendClild(button);
+  td.appendChild(button);
   dom.perentNode.insertBefore(td, dom.perentNode.firstChild);
 }
 
