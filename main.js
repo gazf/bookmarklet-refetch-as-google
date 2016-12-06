@@ -25,7 +25,7 @@
   for(var i = 0; i < list.length; i++){
     var path = list[i].innerText;
     addFetchButton(list[i], {
-      text: "Fetch",
+      text: "ReFetch",
       path: path,
       listener: fetchButtonListener
     });
